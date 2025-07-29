@@ -13,7 +13,7 @@ menu = {
 
 
 ### Empty for storing later all the data of each customers: 
-orders = []
+orders = [] ### later data will be stored in the Form of the json 
 # 1St step of the menu: 
 def show_menu():
     print("--- Menu ---")
