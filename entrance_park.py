@@ -13,7 +13,18 @@ menu = {
 
 
 ### Empty for storing later all the data of each customers: 
-orders = [] ### later data will be stored in the Form of the json 
+
+orders  = []
+# orders = [
+#     {
+#         'Name':'Subin Thapa',
+#         'Age': 19
+#     },
+#     {
+#         'Name':"Rahul Adhikari",
+#         'Age': 12
+#     }
+# ] ### later data will be stored in the Form of the json 
 # 1St step of the menu: 
 def show_menu():
     print("--- Menu ---")
@@ -24,7 +35,8 @@ def show_menu():
 ### defining fuction for  the taking order
 def take_order():
     customer_name = input("Enter customer name: ")
-    order_items = {} ## empty dictionary  for stroing one's order data at a time: 
+    order_items = {}
+     ## empty dictionary  for stroing one's order data at a time: 
     total = 0
     show_menu()
 
@@ -43,7 +55,7 @@ def take_order():
                 order_items[item] = qty_input
             total = menu[item] * qty_input + total
         else:
-            print("Invalid Number for quantity.")
+            print("Invalid item. Please choose from the me")
 
     if len(order_items) > 0:
         orders.append({
