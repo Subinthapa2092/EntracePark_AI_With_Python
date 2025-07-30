@@ -1,5 +1,8 @@
-##### Write a Program in a Python to do the restraunt Management System: 
+### Main used : For loop, while loop,dictionary and last  Function: 
 
+
+##### Write a Program in a Python to do the restraunt Management System: 
+#### Name: Subin Thapa 
 
 
 ### lists of the food in the dictionary 
@@ -75,7 +78,7 @@ def show_all_orders():
 #### function with Search Order
 def search_order():
     name = input("Enter customer name to search: ")
-    found = False
+    found = False ## Assume No Matched Found : 
     for order in orders:
         if order["customer"].lower() == name.lower():
             print(f"\nOrder found for {order['customer']}")
