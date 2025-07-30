@@ -12,20 +12,9 @@ menu = {
 }
 
 
-### Empty for storing later all the data of each customers: 
-
-orders  = []
-# orders = [
-#     {
-#         'Name':'Subin Thapa',
-#         'Age': 19
-#     },
-#     {
-#         'Name':"Rahul Adhikari",
-#         'Age': 12
-#     }
-# ] ### later data will be stored in the Form of the json 
-# 1St step of the menu: 
+### Empty for storing later all the data of each customers: For the Json data: 
+orders  = [] 
+#### function with showing menu : 
 def show_menu():
     print("--- Menu ---")
     for item in menu: 
@@ -63,7 +52,7 @@ def take_order():
             "items": order_items,
             "total": total
         })
-        print(f" Order taken for {customer_name}. Total bill: Rs {total}")
+        print(f"Order taken for {customer_name}. Total bill: Rs {total}")
     else:
         print("No items ordered.")
    ### Showing all orders in the form of the function: 
@@ -80,24 +69,24 @@ def show_all_orders():
         print("Items Ordered:")
         for item in i['items']:
             print(f"  {item}: {i['items'][item]} pcs")
-        print(f"Total Bill: Rs {i['total']}")
+        print(f" Total Bill: Rs {i['total']}")
         index += 1
 
 #### function with Search Order
 def search_order():
     name = input("Enter customer name to search: ")
+    found = False
     for order in orders:
         if order["customer"].lower() == name.lower():
-            print(f" Order found for {order['customer']}")
+            print(f"\nOrder found for {order['customer']}")
             print("Items Ordered:")
-
-            
             for item in order['items']:
                 print(f"  {item}: {order['items'][item]} pcs")
             print(f"Total Bill: Rs {order['total']}")
-            break
-        else:
-            print("No order found for that customer.")
+            found = True
+    if not found:
+        print("No order found for that customer.")
+
 
 
 ##### Menu Whole  System: 
